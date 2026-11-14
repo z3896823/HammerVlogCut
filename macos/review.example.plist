@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>local.hammervlogcut.review</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/bin/python3</string>
+		<string>/ABSOLUTE/PATH/TO/HammerVlogCut/scripts/review.py</string>
+		<string>--activated</string>
+		<string>--library</string>
+		<string>/ABSOLUTE/PATH/TO/Project</string>
+		<string>--token</string>
+		<string>REPLACE_WITH_RANDOM_LOCAL_TOKEN</string>
+	</array>
+	<key>Sockets</key>
+	<dict>
+		<key>Listener</key>
+		<dict>
+			<key>SockFamily</key>
+			<string>IPv4</string>
+			<key>SockNodeName</key>
+			<string>127.0.0.1</string>
+			<key>SockServiceName</key>
+			<string>56781</string>
+			<key>SockType</key>
+			<string>stream</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

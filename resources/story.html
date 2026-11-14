@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>故事预览 · MediaReview</title><link rel="stylesheet" href="review.css"><link rel="stylesheet" href="story.css"></head>
+<body><header class="top"><strong class="brand"><i aria-hidden="true"></i>MediaReview</strong><span id="project"></span><a class="story-link" href="./">素材审阅台</a></header>
+<main><div class="heading"><h1>故事预览</h1><select hidden id="versions" aria-label="编排版本"></select></div>
+<p id="message" role="status"></p><div id="cut" hidden><div class="player"><div id="story-deck" class="deck"><div class="screens"></div><div class="transport"><button class="toggle">播放</button><input type="range" min="0" step="any" value="0" aria-label="时间线进度"><output></output><button class="full" aria-label="全屏">全屏</button></div></div><p id="playing"></p></div>
+<section><h2>段落与素材</h2><div id="chapters"></div></section></div></main>
+<dialog id="trim"><h2 id="trim-title"></h2><video id="source" controls playsinline preload="auto"></video>
+<div id="junction" hidden class="deck"><div class="screens"></div><div class="transport"><button class="toggle">播放</button><input type="range" min="0" step="any" value="0" aria-label="时间线进度"><output></output><button class="full" aria-label="全屏">全屏</button></div></div>
+<div class="timeline"><div id="track"><div id="trim-frames" aria-hidden="true"></div><div id="selection"></div>
+<button class="handle" id="entry" role="slider" aria-label="入点"></button><button class="handle" id="exit" role="slider" aria-label="出点"></button></div></div>
+<div class="times"><span>入点 <output id="in-time"></output></span><span>出点 <output id="out-time"></output></span></div>
+<div class="trim-actions"><div class="cut-trials"><button id="trial">试看入点</button><button id="trial-exit">试看出点</button></div><button id="remove">移出</button><button id="done">完成</button></div><p id="trim-error" role="status"></p></dialog>
+<dialog id="decision" aria-labelledby="question"><h2 id="question"></h2>
+<p id="decision-error" role="status"></p><div class="trim-actions"><button id="back">继续编辑</button><button id="discard">放弃修改</button><button id="apply">应用</button></div></dialog>
+<script src="timeline.js"></script><script src="story.js"></script></body></html>

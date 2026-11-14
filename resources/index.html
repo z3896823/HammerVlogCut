@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>素材审阅台</title><link rel="stylesheet" href="review.css">
+</head>
+<body>
+<header class="top"><strong class="brand"><i aria-hidden="true"></i>MediaReview</strong><div class="project"><label for="projects">项目</label><select id="projects"></select></div>
+<button id="context-open" disabled aria-haspopup="dialog"><strong>项目背景</strong><span id="context-preview">点击补充</span></button><a id="story-open" class="story-link" target="_blank" rel="noopener">故事预览 ↗</a></header>
+<dialog id="context-dialog" aria-labelledby="context-title">
+  <h2 id="context-title">项目背景</h2><p id="context-summary"></p>
+  <label for="context-text">背景原文</label><textarea id="context-text" placeholder="写下这次拍摄的缘起、人物关系或想记录的事…"></textarea>
+  <p id="context-error" role="alert"></p><div class="actions"><button id="context-cancel">取消</button><button id="context-save">确认</button></div>
+</dialog>
+<div class="workspace">
+  <aside><div class="section-head"><h2>素材库</h2><span id="count"></span></div><nav id="assets" aria-label="素材列表"></nav></aside>
+  <main><p id="error" role="alert"></p><div id="detail" hidden>
+    <div class="asset-head"><h1 id="title"></h1><p id="meta"></p></div>
+    <div class="desk"><div class="screen-column">
+      <section class="stage" aria-label="原片与代表帧"><div id="media"><video controls playsinline preload="metadata"></video><div id="frames" aria-label="代表帧"></div></div></section>
+      <form id="feedback"><div class="background-head"><label for="note">背景补充</label><button id="save">确认</button></div>
+        <textarea id="note" placeholder="补充拍摄背景、人物关系，或你觉得精彩的时刻…"></textarea>
+        <span id="state" role="status"></span>
+        <details id="history" hidden><summary>已确认的背景</summary><ol></ol></details>
+      </form>
+    </div>
+    <section class="inspector"><h2>素材解读</h2><div class="tabs" aria-label="内容分类"><button id="visualTab" aria-pressed="true">片段描述</button><button id="speechTab" aria-pressed="false">对白转写</button></div>
+      <div id="segments"></div><details class="coverage"><summary>识别范围</summary><p id="status"></p></details>
+    </section></div>
+  </div></main>
+</div><script src="review.js"></script></body></html>
